@@ -1,0 +1,16 @@
+{
+  "name": "Sprinkle",
+  "version": "1.0.0",
+  "description": "Example PWA that demonstrates an offline web app using the Unsplash REST API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-serve": "^1.4.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Sprinkle",
+  "description": "Example PWA that demonstrates an offline web app using the Unsplash REST API.",
+  "main": "src/index.html",
+  "license": "MIT",
+  "homepage": "https://github.com/abraham/sprinkle",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

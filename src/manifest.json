@@ -1,0 +1,31 @@
+{
+  "name": "Sprinkle PWA Demo",
+  "short_name": "Sprinkle",
+  "description": "Example PWA that demonstrates an offline web app using the Unsplash REST API.",
+  "start_url": "/",
+  "background_color": "black",
+  "theme_color": "#2196f3",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/icons/gallery-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/gallery-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/gallery-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/gallery-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}
