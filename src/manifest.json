@@ -3,7 +3,7 @@
   "short_name": "Sprinkle",
   "description": "Example PWA that demonstrates an offline web app using the Unsplash REST API.",
   "start_url": "/",
-  "background_color": "black",
+  "background_color": "#2196f3",
   "theme_color": "#2196f3",
   "display": "standalone",
   "icons": [
