@@ -36,8 +36,8 @@ const View = new class {
 
   onDownload(event) {
     if (!navigator.onLine) {
-      App.view.showToast('Downloading low resolution version while offline');
-      event.currentTarget.setAttribute('href', event.currentTarget.getAttribute('data-backup-download'));
+      event.preventDefault();
+      App.view.showToast('Downloading is disabled while offline');
     }
   }
 
