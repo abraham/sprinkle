@@ -28,8 +28,17 @@ const View = new class {
     card.querySelector('.mdl-card').style.background = `url(${image.urls.small}) center / cover`
     card.querySelector('.image-card-image__author').innerText = image.user.name;
     card.querySelector('.image-card-image__download').setAttribute('href', image.links.download);
+    card.querySelector('.image-card-image__download').addEventListener('click', this.onDownload);
+    card.querySelector('.image-card-image__download').setAttribute('data-backup-download', image.urls.small);
     card.querySelector('.mdl-card__menu-open').setAttribute('href', image.links.html);
     this.grid.appendChild(card);
+  }
+
+  onDownload(event) {
+    if (!navigator.onLine) {
+      App.view.showToast('Downloading low resolution version while offline');
+      event.currentTarget.setAttribute('href', event.currentTarget.getAttribute('data-backup-download'));
+    }
   }
 
   renderImages(images) {
