@@ -1,11 +1,12 @@
-console.log('Started', this);
+const VERSION = 1;
 
 const CACHE_NAMES = {
   app: 'app',
   images: 'images',
   api: 'api'
 };
-const APP_CACHE_NAME = 'app';
+
+console.log('Started', VERSION, this);
 
 this.addEventListener('install', (event) => {
   console.log('Installed', event);
