@@ -16,7 +16,9 @@ this.addEventListener('install', (event) => {
         '/js/app.js',
         '/js/material.min.js',
         '/css/material.blue-red.min.css',
-        'https://fonts.googleapis.com/icon?family=Material+Icons'
+        '/fonts/MaterialIcons-Regular.ttf',
+        '/fonts/MaterialIcons-Regular.woff',
+        '/fonts/MaterialIcons-Regular.woff2'
       ]);
     }).then(function() {
       console.log('trying to sendMessage');
