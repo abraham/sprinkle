@@ -6,21 +6,23 @@ const CACHE_NAMES = {
   api: 'api'
 };
 
+const APP_FILES = [
+  '/',
+  '/js/app.js',
+  '/js/material.min.js',
+  '/css/material.blue-red.min.css',
+  '/fonts/MaterialIcons-Regular.ttf',
+  '/fonts/MaterialIcons-Regular.woff',
+  '/fonts/MaterialIcons-Regular.woff2'
+];
+
 console.log('Started', VERSION, this);
 
 this.addEventListener('install', (event) => {
   console.log('Installed', event);
   let responsePromise = caches.open(CACHE_NAMES.app)
     .then(function(cache) {
-      return cache.addAll([
-        '/',
-        '/js/app.js',
-        '/js/material.min.js',
-        '/css/material.blue-red.min.css',
-        '/fonts/MaterialIcons-Regular.ttf',
-        '/fonts/MaterialIcons-Regular.woff',
-        '/fonts/MaterialIcons-Regular.woff2'
-      ]);
+      return cache.addAll(APP_FILES);
     }).then(function() {
       console.log('trying to sendMessage');
       // return sendMessage('sendMessage.install');
