@@ -113,7 +113,8 @@ const App = new class {
   registerServiceWorker() {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('serviceworker.js')
-        .then(registration => console.log('[APP] Registered SW', registration));
+        .then(registration => console.log('[APP] SW registered ', registration))
+        .catch(error => console.log('[APP] SW registration failed', error));
 
       navigator.serviceWorker.addEventListener('message', function(event){
         console.log('[APP] Client 1 Received Message', event.data);
