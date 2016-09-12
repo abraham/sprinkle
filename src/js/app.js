@@ -1,5 +1,3 @@
-console.log('app.js loaded.');
-
 const seedPhotos = [
   {"id":"5sxQH0ugTaA","created_at":"2016-07-05T03:34:15-04:00","width":3000,"height":2000,"color":"#FFC17E","downloads":2462,"likes":129,"liked_by_user":false,"exif":{"make":"Canon","model":"Canon EOS 5DS R","exposure_time":"0.125","aperture":"4","focal_length":"20","iso":100},"location":{"city":"Värmdö","country":"Sweden","position":{"latitude":59.306416,"longitude":18.346467}},"current_user_collections":[],"urls":{"raw":"https://images.unsplash.com/photo-1467703834117-04386e3dadd8","full":"https://hd.unsplash.com/photo-1467703834117-04386e3dadd8","regular":"https://images.unsplash.com/photo-1467703834117-04386e3dadd8?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max\u0026s=1d9c52fe23e377c47ffa837e9745d0d3","small":"https://images.unsplash.com/photo-1467703834117-04386e3dadd8?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=400\u0026fit=max\u0026s=eafccd3329912a5cd92a9fccf8da3ff4","thumb":"https://images.unsplash.com/photo-1467703834117-04386e3dadd8?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=200\u0026fit=max\u0026s=afa637cc1aab9adb892f0c11fe500bb2"},"categories":[{"id":4,"title":"Nature","photo_count":54208,"links":{"self":"https://api.unsplash.com/categories/4","photos":"https://api.unsplash.com/categories/4/photos"}}],"links":{"self":"https://api.unsplash.com/photos/5sxQH0ugTaA","html":"http://unsplash.com/photos/5sxQH0ugTaA","download":"http://unsplash.com/photos/5sxQH0ugTaA/download","download_location":"https://api.unsplash.com/photos/5sxQH0ugTaA/download"},"user":{"id":"46rKBE69V4I","username":"andersjilden","name":"Anders Jildén","portfolio_url":"http://www.andersjilden.com","profile_image":{"small":"https://images.unsplash.com/profile-1457385257319-4e6a2fe89e66?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32\u0026s=98007ade7630749d4efc81513b51be0f","medium":"https://images.unsplash.com/profile-1457385257319-4e6a2fe89e66?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64\u0026s=f6644ee85e59506c4d7097be7f1d98dd","large":"https://images.unsplash.com/profile-1457385257319-4e6a2fe89e66?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128\u0026s=7a356e1ba6010b7946d16df484e974a6"},"links":{"self":"https://api.unsplash.com/users/andersjilden","html":"http://unsplash.com/@andersjilden","photos":"https://api.unsplash.com/users/andersjilden/photos","likes":"https://api.unsplash.com/users/andersjilden/likes","portfolio":"https://api.unsplash.com/users/andersjilden/portfolio"}}},
   {"id":"b-yEdfrvQ50","created_at":"2014-10-12T15:29:06-04:00","width":5184,"height":3456,"color":"#788887","downloads":5145,"likes":98,"liked_by_user":false,"exif":{"make":"Canon","model":"Canon EOS 60D","exposure_time":"1/80","aperture":"11.0","focal_length":"50/1","iso":200},"current_user_collections":[],"urls":{"raw":"https://images.unsplash.com/uploads/1413142095961484763cf/d141726c","full":"https://hd.unsplash.com/uploads/1413142095961484763cf/d141726c","regular":"https://images.unsplash.com/uploads/1413142095961484763cf/d141726c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max\u0026s=8a9b4243b6c4839068414740b3a2de9e","small":"https://images.unsplash.com/uploads/1413142095961484763cf/d141726c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=400\u0026fit=max\u0026s=cf01fa1b944963d1265d05719691d694","thumb":"https://images.unsplash.com/uploads/1413142095961484763cf/d141726c?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=200\u0026fit=max\u0026s=6e394a72cee937fd11bf3ad474f0e83c"},"categories":[{"id":4,"title":"Nature","photo_count":54208,"links":{"self":"https://api.unsplash.com/categories/4","photos":"https://api.unsplash.com/categories/4/photos"}}],"links":{"self":"https://api.unsplash.com/photos/b-yEdfrvQ50","html":"http://unsplash.com/photos/b-yEdfrvQ50","download":"http://unsplash.com/photos/b-yEdfrvQ50/download","download_location":"https://api.unsplash.com/photos/b-yEdfrvQ50/download"},"user":{"id":"_xatFNjMFGM","username":"gabrielssantiago","name":"Gabriel Santiago","portfolio_url":"http://whileimout.vsco.co","profile_image":{"small":"https://images.unsplash.com/profile-1460056671981-758694b3f290?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32\u0026s=674eaac06f92f34e24a91bdd3fa8fa72","medium":"https://images.unsplash.com/profile-1460056671981-758694b3f290?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64\u0026s=90b6fcebf8f17a810b9d4f250c98aa53","large":"https://images.unsplash.com/profile-1460056671981-758694b3f290?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128\u0026s=6ebef90b1c03ed509f83f62c6a29b7d8"},"links":{"self":"https://api.unsplash.com/users/gabrielssantiago","html":"http://unsplash.com/@gabrielssantiago","photos":"https://api.unsplash.com/users/gabrielssantiago/photos","likes":"https://api.unsplash.com/users/gabrielssantiago/likes","portfolio":"https://api.unsplash.com/users/gabrielssantiago/portfolio"}}},
@@ -42,15 +40,13 @@ const View = new class {
   }
 
   renderImages(images) {
-    images.forEach((image) => {
-      this.renderImage(image);
-    });
+    images.forEach(image => this.renderImage(image));
   }
 
   hideSupportCard() {
     if('serviceWorker' in navigator) {
       document.querySelector('.support-card').remove();
-      console.log('Congrats, you appear to be using a modern browser.');
+      console.log('[APP] Congrats, you appear to be using a modern browser.');
     }
   }
 }
@@ -77,7 +73,7 @@ const UnsplashApi = new class {
       headers: this.headers()
     }
     return fetch(this.constructUrl(path, params), init)
-      .then((response) => { return response.json() });
+      .then(response => { return response.json() });
   }
 
   constructUrl(path, params) {
@@ -90,8 +86,6 @@ const UnsplashApi = new class {
     } else {
       return '';
     }
-
-    return `client_id=${this.clientId}`;
   }
 
   headers() {
@@ -113,21 +107,16 @@ const App = new class {
     this.view.hideSupportCard();
     this.registerServiceWorker();
     this.view.renderImages(seedPhotos);
-    this.api.photos().then(images => {
-      this.view.renderImages(images)
-    });
+    this.api.photos().then(images => this.view.renderImages(images));
   }
 
   registerServiceWorker() {
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('serviceworker.js')
-        .then(function(reg) {
-          console.log(':^)', reg);
-        });
+      navigator.serviceWorker.register('serviceworker.js')
+        .then(registration => console.log('[APP] Registered SW', registration));
 
       navigator.serviceWorker.addEventListener('message', function(event){
-        console.log("Client 1 Received Message: " + event.data);
+        console.log('[APP] Client 1 Received Message', event.data);
         // event.ports[0].postMessage("Client 1 Says 'Hello back!'");
       });
     }

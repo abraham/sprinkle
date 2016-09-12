@@ -16,7 +16,7 @@ const APP_FILES = [
   '/fonts/MaterialIcons-Regular.woff2'
 ];
 
-console.log('[SW] Started', VERSION, this);
+console.log('[SW] Started version', VERSION, this);
 
 this.addEventListener('install', event => {
   console.log('[SW] Installed', event);
