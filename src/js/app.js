@@ -37,6 +37,13 @@ const View = new class {
       this.renderImage(image);
     });
   }
+
+  hideSupportCard() {
+    if('serviceWorker' in navigator) {
+      document.querySelector('.support-card').remove();
+      console.log('Congrats, you appear to be using a modern browser.');
+    }
+  }
 }
 
 const UnsplashApi = new class {
@@ -94,6 +101,7 @@ const App = new class {
   }
 
   init() {
+    this.view.hideSupportCard();
     this.registerServiceWorker();
     this.view.renderImages(seedPhotos);
     this.api.photos().then(images => {

@@ -36,8 +36,11 @@
       .mdl-card {
         margin: 2px;
       }
-      .example-card.mdl-card {
+      .example-card.mdl-card, .support-card.mdl-card {
         width: 384px;
+      }
+      .mdl-card__supporting-text {
+        min-height: 112px;
       }
       .image-card-image.mdl-card {
         width: 384px;
@@ -102,6 +105,28 @@
               <!-- <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
                 <i class="material-icons">share</i>
               </button> -->
+            </div>
+          </div>
+          <div class="support-card mdl-cell mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+              <h2 class="mdl-card__title-text">Browser support</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+              <p>It looks like your browser doesn't support the new JavaScript features needed. Try using one of the browser listed below.</p>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://www.google.com/chrome/">
+                Chrome
+              </a>
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://www.mozilla.org/en-US/firefox/new/">
+                Firefox
+              </a>
+              <!-- TODO: Edge might work but we haven't tested it. -->
+              <!-- <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://www.microsoft.com/en-us/windows/microsoft-edge">
+                Edge
+              </a> -->
+            </div>
+            <div class="mdl-card__menu">
             </div>
           </div>
         </div>
