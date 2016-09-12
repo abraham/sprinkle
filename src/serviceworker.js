@@ -16,74 +16,53 @@ const APP_FILES = [
   '/fonts/MaterialIcons-Regular.woff2'
 ];
 
-console.log('Started', VERSION, this);
+console.log('[SW] Started', VERSION, this);
 
-this.addEventListener('install', (event) => {
-  console.log('Installed', event);
+this.addEventListener('install', event => {
+  console.log('[SW] Installed', event);
   let responsePromise = caches.open(CACHE_NAMES.app)
-    .then(function(cache) {
-      return cache.addAll(APP_FILES);
-    }).then(function() {
-      console.log('trying to sendMessage');
-      // return sendMessage('sendMessage.install');
-    });
-    event.waitUntil(responsePromise);
-    this.skipWaiting();
+    .then(cache => { return cache.addAll(APP_FILES); })
+    .then(() => self.skipWaiting());
 });
 
-this.addEventListener('activate', (event) => {
-  let responsePromise = new Promise((resolve, reject) => {
-    return resolve(this.clients.claim());
-  }).then(() => {
-    // return sendMessage('sendMessage.activate');
-  }).then(() => {
-    // return setTimeout(() => { sendMessage('sendMessage.activate') }, 1000);
-  }).then(() => {
-    console.log('Activated', event);
-  });
-
-  event.waitUntil(responsePromise);
+this.addEventListener('activate', event => {
+  console.log('[SW] Activated', event);
+  event.waitUntil(self.clients.claim());
 });
 
-this.addEventListener('fetch', (event) => {
-  let responsePromise = caches.match(event.request)
-    .then(function(response) {
-      if (response) {
+this.addEventListener('fetch', event => {
+  // console.log('[SW] Fetch', event);
+  let responsePromise = caches.match(event.request).then(response => {
+    if (response) {
+      return response;
+    }
+
+    let requestClone = event.request.clone();
+    return fetch(event.request).then(response => {
+      if(!response) {
         return response;
       }
-      let requestClone = event.request.clone();
 
-      return fetch(event.request)
-        .then(function(response) {
-          let responseClone = response.clone();
+      let responseClone = response.clone();
+      if(event.request.url.startsWith('https://api.unsplash.com/')) {
+        caches.open(CACHE_NAMES.api)
+          .then(cache => cache.put(requestClone, responseClone));
+      }
 
-          if(!response) {
-            return response;
-          }
+      if(event.request.url.startsWith('https://images.unsplash.com/')) {
+        caches.open(CACHE_NAMES.images)
+          .then(cache => cache.put(requestClone, responseClone));
+      }
 
-          if(event.request.url.startsWith('https://api.unsplash.com/')) {
-            caches.open(CACHE_NAMES.api)
-              .then(function(cache) {
-                cache.put(requestClone, responseClone);
-              });
-          }
-
-          if(event.request.url.startsWith('https://images.unsplash.com/')) {
-            caches.open(CACHE_NAMES.images)
-              .then(function(cache) {
-                cache.put(requestClone, responseClone);
-              });
-          }
-
-          return response;
-        });
+      return response;
     });
+  });
 
   event.respondWith(responsePromise);
 });
 
 // function sendMessage(message) {
-//   console.log('sendMessage', message);
+//   console.log('[SW] sendMessage', message);
 //   // return new Promise(function(resolve, reject) {
 //   //   var messageChannel = new MessageChannel();
 //   //   messageChannel.port1.onmessage = function(event) {
@@ -94,17 +73,17 @@ this.addEventListener('fetch', (event) => {
 //   //     }
 //   //   };
 //   return self.clients.matchAll().then(function(clients) {
-//     console.log('clients', clients);
+//     console.log('[SW] clients', clients);
 //     return Promise.all(clients.map(function(client) {
 //       return client.postMessage('The service worker has activated and taken control.');
 //     }));
 //   });
 //   // setTimeout(function(){
-//   //   console.log('setTimeout triggered');
+//   //   console.log('[SW] setTimeout triggered');
 //   //   clients.matchAll().then(function(clients) {
-//   //     console.log('clients2', clients);
+//   //     console.log('[SW] clients2', clients);
 //   //     clients.forEach((client) => {
-//   //       console.log('client2', client);
+//   //       console.log('[SW] client2', client);
 //   //     });
 //   //     // for(i = 0 ; i < clients.length ; i++) {
 //   //     //   if(clients[i] === 'index.html') {
