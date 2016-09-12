@@ -1,7 +1,7 @@
 const VERSION = 3;
 
 const CACHE_NAMES = {
-  app: 'app',
+  app: `app-v${VERSION}`,
   images: 'images',
   api: 'api'
 };
