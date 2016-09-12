@@ -52,23 +52,29 @@ const UnsplashApi = new class {
   }
 
   photos() {
-    return this.get('photos');
+    return this.get('photos', {per_page: 25});
   }
 
-  get(path, query) {
+  get(path, params) {
     let init = {
       method: 'GET',
       headers: this.headers()
     }
-    return fetch(this.constructUrl(path), init)
+    return fetch(this.constructUrl(path, params), init)
       .then((response) => { return response.json() });
   }
 
   constructUrl(path, params) {
-    return `${this.apiHost}/${path}`;
+    return `${this.apiHost}/${path}${this.query(params)}`;
   }
 
-  query() {
+  query(params) {
+    if (params) {
+      return '?' + Object.keys(params).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(params[k])}`).join('&');
+    } else {
+      return '';
+    }
+
     return `client_id=${this.clientId}`;
   }
 
