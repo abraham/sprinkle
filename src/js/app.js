@@ -73,7 +73,13 @@ const UnsplashApi = new class {
       headers: this.headers()
     }
     return fetch(this.constructUrl(path, params), init)
-      .then(response => { return response.json() });
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw response;
+        }
+      });
   }
 
   constructUrl(path, params) {
@@ -107,7 +113,11 @@ const App = new class {
     this.view.hideSupportCard();
     this.registerServiceWorker();
     this.view.renderImages(seedPhotos);
-    this.api.photos().then(images => this.view.renderImages(images));
+    this.api.photos().then(images => this.view.renderImages(images))
+      .catch(error => {
+        App.view.showToast('Error getting additional photos');
+        console.log('[APP] Error getting photos', error)
+      });
   }
 
   registerServiceWorker() {
