@@ -125,13 +125,15 @@ const App = new class {
       navigator.serviceWorker.register('serviceworker.js')
         .then(registration => console.log('[APP] SW registered ', registration))
         .catch(error => console.log('[APP] SW registration failed', error));
-
-      navigator.serviceWorker.addEventListener('message', function(event){
-        console.log('[APP] Client 1 Received Message', event.data);
-        // event.ports[0].postMessage("Client 1 Says 'Hello back!'");
-      });
     }
   }
 }
+
+navigator.serviceWorker.addEventListener('message', function(event){
+  console.log('[APP] Client received addEventListener message', event.data);
+  if (event.data === 'install-complete') {
+    App.view.showToast('App is ready for offline use');
+  }
+});
 
 App.init();
