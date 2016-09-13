@@ -1,5 +1,5 @@
 const MATCH_ALL_FILTER = {includeUncontrolled: true};
-const VERSION = 3;
+const VERSION = 4;
 
 const CACHE_NAMES = {
   app: `app-v${VERSION}`,
