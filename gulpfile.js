@@ -7,7 +7,15 @@ const concat = require('gulp-concat');
 const clean = require('gulp-clean');
 const polyfiller = require('gulp-polyfiller');
 
-gulp.task('serve', ['build'], serve('build'));
+gulp.task('default', () => {
+  console.log('Run `gulp watch` to start the development server');
+});
+
+gulp.task('watch', ['build', 'serve'], () => {
+  gulp.watch('src/**/*', ['build']);
+});
+
+gulp.task('serve', serve('build'));
 
 gulp.task('build', ['copy', 'js']);
 
