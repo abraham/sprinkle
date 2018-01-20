@@ -6,7 +6,9 @@ Install
 -------
 ```
 npm install -g gulp-cli
+npm install babel-cli babel-preset-es2015
 npm install
+gulp build
 gulp serve
 ```
 
